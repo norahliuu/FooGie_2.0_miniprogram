@@ -1,0 +1,8 @@
+# 后端
+backend/venv/
+backend/__pycache__/
+backend/services/__pycache__/
+backend/config.py
+
+# 小程序
+miniprogram/project.private.config.json

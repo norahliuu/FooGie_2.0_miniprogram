@@ -1,0 +1,24 @@
+<view class="container">
+  <view class="header">
+    <text class="title">食光机</text>
+    <text class="subtitle">粘贴视频链接，一键提取食谱</text>
+  </view>
+
+  <view class="input-section">
+    <textarea 
+      class="url-input" 
+      placeholder="粘贴抖音/小红书/B站的菜谱视频链接 *链接可通过分享->复制链接获得" 
+      value="{{inputUrl}}"
+      bindinput="onInputChange"
+      auto-height
+      maxlength="500"
+    />
+    <button class="parse-btn" bindtap="onParse" loading="{{loading}}">
+      {{loading ? '解析中...' : '解析食谱'}}
+    </button>
+  </view>
+
+  <button class="history-btn" bindtap="goToHistory">我的菜谱本
+  </button>
+  
+</view>

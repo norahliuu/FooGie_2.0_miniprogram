@@ -1,0 +1,35 @@
+<view class="container">
+  <view class="progress">
+    <text class="progress-text">第 {{currentStep + 1}} 步 / 共 {{totalSteps}} 步</text>
+    <view class="progress-bar">
+      <view class="progress-fill" style="width: {{progressWidth}}"></view>
+    </view>
+  </view>
+
+  <view class="card">
+    <view class="step-badge">{{currentStep + 1}}</view>
+    <text class="step-content">{{steps[currentStep].content}}</text>
+    <view class="check-area" bindtap="onCheck">
+      <view class="checkbox {{checked ? 'checked' : ''}}">
+        <text wx:if="{{checked}}">✓</text>
+      </view>
+      <text class="check-text">{{checked ? '已完成' : '点击标记完成'}}</text>
+    </view>
+  </view>
+
+  <view class="nav-buttons">
+    <button class="nav-btn prev-btn" bindtap="onPrev" disabled="{{currentStep === 0}}">上一步</button>
+    <button class="nav-btn next-btn" bindtap="onNext">
+      {{currentStep === totalSteps - 1 ? '完成' : '下一步'}}
+    </button>
+  </view>
+</view>
+
+<view class="done-overlay" wx:if="{{allDone}}">
+  <view class="done-card">
+    <text class="done-emoji">🎉</text>
+    <text class="done-title">恭喜完成！</text>
+    <text class="done-subtitle">{{recipeName}} 做好啦</text>
+    <button class="done-btn" bindtap="onBackHome">返回首页</button>
+  </view>
+</view>

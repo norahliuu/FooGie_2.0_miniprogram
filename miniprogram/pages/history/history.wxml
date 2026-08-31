@@ -1,0 +1,21 @@
+<view class="container">
+  <view wx:if="{{historyList.length === 0}}" class="empty">
+    <text class="empty-text">还没有解析过菜谱哦</text>
+  </view>
+
+  <view wx:else>
+    <view 
+      class="history-item" 
+      wx:for="{{historyList}}" 
+      wx:key="index"
+      bindtap="onHistoryTap"
+      data-index="{{index}}"
+    >
+      <view class="history-info">
+        <text class="history-name">{{item.title}}</text>
+        <text class="history-platform">{{item.source_platform}}</text>
+      </view>
+      <view class="delete-btn" catchtap="onDelete" data-index="{{index}}">删除</view>
+    </view>
+  </view>
+</view>

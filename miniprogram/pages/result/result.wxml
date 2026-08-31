@@ -1,0 +1,23 @@
+<view class="container">
+  <text class="recipe-title">{{recipe.title}}</text>
+
+  <view class="section">
+    <text class="section-title">食材清单</text>
+    <view class="ingredient-list">
+      <view class="ingredient-item" wx:for="{{recipe.ingredients}}" wx:key="index">
+        <text class="ingredient-name">{{item.name}}</text>
+        <text class="ingredient-qty">{{item.quantity}}</text>
+      </view>
+    </view>
+  </view>
+
+  <view class="section">
+    <text class="section-title">烹饪步骤</text>
+    <view class="step-item" wx:for="{{recipe.steps}}" wx:key="index">
+      <view class="step-number">{{item.step}}</view>
+      <text class="step-content">{{item.content}}</text>
+    </view>
+  </view>
+
+  <button class="cook-btn" bindtap="onStartCooking">进入做饭模式</button>
+</view>
