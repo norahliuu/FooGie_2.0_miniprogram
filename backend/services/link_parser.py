@@ -22,8 +22,6 @@ def clean_url(url: str) -> str:
     return urls[0]
    
 
-
-
 def identify_platform(url: str) -> str:
     """
     Return the name of the social media plantform of the entered URL 

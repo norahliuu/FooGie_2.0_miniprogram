@@ -1,6 +1,6 @@
 from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel
-from services.link_parser import identify_platform, fetch_video_data
+from services.link_parser import identify_platform, fetch_video_data, clean_url
 from services.recipe_extractor import extract_recipe
 
 app = FastAPI()
@@ -17,6 +17,9 @@ def hello():
 
 def parse_recipe(request: ParseRequest):
     try:
+        #step0: 清理输入的url
+        request.url = clean_url(request.url) 
+        
         #step 1: 识别来源平台
         platform = identify_platform(request.url)
 
