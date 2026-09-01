@@ -1,7 +1,28 @@
 # 识别用户输入链接是否来自于程序支持的社交媒体平台
 # 输入url后续会通过FastAPI发送指令到main
+import re 
 import requests
 from config import TIKHUB_API_KEY
+
+def clean_url(url: str) -> str:
+    """
+    Clean the input URL by removing any unnecessary query parameters or fragments.
+    清理输入的URL，去除不必要的查询参数或片段。
+    """
+    url = url.strip() # 去除首尾空格 
+
+    # 用正则匹配URL
+    url_pattern = r'https?://[^\s<>"{}|\\^`\[\]]+'
+    urls = re.findall(url_pattern, url)
+    
+    if not urls:
+        raise ValueError("未找到有效链接，请确认粘贴的内容包含视频链接")
+    
+    # 返回第一个匹配到的URL
+    return urls[0]
+   
+
+
 
 def identify_platform(url: str) -> str:
     """
