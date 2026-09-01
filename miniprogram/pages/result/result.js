@@ -11,9 +11,13 @@ Page({
     }
   },
 
-  onStartCooking() {
-    wx.navigateTo({
-      url: '/pages/cooking/cooking?recipe=' + encodeURIComponent(JSON.stringify(this.data.recipe))
+  onCopyLink() {
+    const text = this.data.recipe.source_url || ''
+    wx.setClipboardData({
+      data: text,
+      success: () => {
+        wx.showToast({ title: '链接已复制，打开抖音即可查看', icon: 'none' })
+      }
     })
   }
 })

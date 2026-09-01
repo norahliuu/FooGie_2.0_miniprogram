@@ -4,7 +4,7 @@ import re
 import requests
 from config import TIKHUB_API_KEY
 
-def clean_url(url: str) -> str:
+def clean_share_url(url: str) -> str:
     """
     Clean the input URL by removing any unnecessary query parameters or fragments.
     清理输入的URL，去除不必要的查询参数或片段。
