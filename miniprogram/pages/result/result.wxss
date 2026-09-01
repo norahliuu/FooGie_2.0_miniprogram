@@ -28,6 +28,24 @@
   display: block;
 }
 
+.source-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10rpx;
+  margin-bottom: 30rpx;
+}
+
+.source-text {
+  font-size: 26rpx;
+  color: #f69d44;
+}
+
+.copy-hint {
+  font-size: 22rpx;
+  color: #999;
+}
+
 .ingredient-list {
   display: flex;
   flex-direction: column;

@@ -19,5 +19,9 @@
     </view>
   </view>
 
+  <view class="source-link" bindtap="onCopyLink">
+    <text class="source-text">查看原视频</text>
+    <text class="copy-hint">点击复制链接</text>
+  </view>
   <button class="cook-btn" bindtap="onStartCooking">进入做饭模式</button>
 </view>
