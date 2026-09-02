@@ -22,11 +22,14 @@ def parse_recipe(request: ParseRequest):
 
         #step 1: 识别来源平台
         platform = identify_platform(clean_url)
-        platform_display = platform 
+
+        #step 2: 调用TikHub获取音频url和文案
+        video_data = fetch_video_data(clean_url, platform)
+
+        #step 2.5: 拼接平台和作者名
+        platform_display = platform
         if video_data.get("author"):
             platform_display = f"{platform}@{video_data['author']}"
-        #step 2: 调用TikHUb获取音频url和文案
-        video_data = fetch_video_data(clean_url, platform)
 
         # 第三步：调Qwen-Omni提取食谱
         recipe = extract_recipe(video_data["audio_url"], video_data["caption"])
