@@ -2,7 +2,7 @@
   <view class="header">
     <text class="title">Foo记</text>
     <text class="subtitle">粘贴视频链接，一键提取食谱</text>
-    <text class="subtitle">把收藏夹里的美食盘上桌🥘</text>
+    <text class="subtitle">把收藏夹里的美食端上桌🥘</text>
   </view>
 
   <view class="input-section">
