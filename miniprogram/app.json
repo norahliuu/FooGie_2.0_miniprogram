@@ -3,10 +3,11 @@
     "pages/index/index",
     "pages/result/result",
     "pages/history/history",
-    "pages/cooking/cooking"
+    "pages/cooking/cooking",
+    "pages/edit/edit"
   ],
   "window": {
-    "navigationBarTitleText": "食光机",
+    "navigationBarTitleText": "Foo记",
     "navigationBarBackgroundColor": "#ffffff",
     "navigationBarTextStyle": "black"
   }
