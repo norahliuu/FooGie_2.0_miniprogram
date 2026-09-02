@@ -37,6 +37,8 @@ page {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .history-info {
@@ -54,6 +56,10 @@ page {
 .history-platform {
   font-size: 24rpx;
   color: #999;
+}
+
+.history-list {
+  width: 100%;
 }
 
 .delete-btn {

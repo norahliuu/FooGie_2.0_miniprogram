@@ -5,7 +5,7 @@
     <text class="empty-text">还没有解析过菜谱哦</text>
   </view>
 
-  <view wx:else>
+  <view wx:else class="history-list">
     <view 
       class="history-item" 
       wx:for="{{historyList}}" 
