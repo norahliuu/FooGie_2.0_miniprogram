@@ -23,5 +23,6 @@
     <text class="source-text">查看原视频</text>
     <text class="copy-hint">点击复制链接</text>
   </view>
+  <button class="edit-btn" bindtap="onEdit">编辑食谱</button>
   <button class="cook-btn" bindtap="onStartCooking">进入做饭模式</button>
 </view>

@@ -108,3 +108,17 @@
   align-items: center;
   justify-content: center;
 }
+
+.edit-btn {
+  width: 100%;
+  height: 88rpx;
+  background: #fff;
+  color: #f69d44;
+  font-size: 32rpx;
+  border-radius: 44rpx;
+  border: 2rpx solid #f69d44;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20rpx;
+}

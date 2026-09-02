@@ -1,0 +1,38 @@
+<view class="container">
+  <view class="section">
+    <text class="section-title">菜名</text>
+    <input class="title-input" value="{{recipe.title}}" bindinput="onTitleChange" />
+  </view>
+
+  <view class="section">
+    <view class="section-header">
+      <text class="section-title">食材清单</text>
+      <view class="add-btn" bindtap="onAddIngredient">+ 添加食材</view>
+    </view>
+    <view class="ingredient-item" wx:for="{{recipe.ingredients}}" wx:key="index">
+      <input class="ingredient-name" value="{{item.name}}" data-index="{{index}}" data-field="name" bindinput="onIngredientChange" placeholder="食材名" />
+      <input class="ingredient-qty" value="{{item.quantity}}" data-index="{{index}}" data-field="quantity" bindinput="onIngredientChange" placeholder="用量" />
+      <view class="delete-icon" catchtap="onDeleteIngredient" data-index="{{index}}">✕</view>
+    </view>
+  </view>
+
+  <view class="section">
+    <view class="section-header">
+      <text class="section-title">烹饪步骤</text>
+      <view class="add-btn" bindtap="onAddStep">+ 添加步骤</view>
+    </view>
+    <view class="step-item" wx:for="{{recipe.steps}}" wx:key="index">
+      <view class="step-left">
+        <view class="step-number">{{index + 1}}</view>
+        <view class="step-arrows">
+          <view class="arrow-btn {{index === 0 ? 'disabled' : ''}}" catchtap="onMoveStep" data-index="{{index}}" data-direction="up">↑</view>
+          <view class="arrow-btn {{index === recipe.steps.length - 1 ? 'disabled' : ''}}" catchtap="onMoveStep" data-index="{{index}}" data-direction="down">↓</view>
+        </view>
+      </view>
+      <textarea class="step-input" value="{{item.content}}" data-index="{{index}}" bindinput="onStepChange" auto-height />
+      <view class="delete-icon" catchtap="onDeleteStep" data-index="{{index}}">✕</view>
+    </view>
+  </view>
+
+  <button class="save-btn" bindtap="onSave">保存修改</button>
+</view>
