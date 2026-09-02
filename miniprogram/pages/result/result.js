@@ -19,5 +19,12 @@ Page({
         wx.showToast({ title: '链接已复制，打开抖音即可查看', icon: 'none' })
       }
     })
-  }
+  },
+  onStartCooking() {
+  wx.navigateTo({
+    url:
+      '/pages/cooking/cooking?recipe=' +
+      encodeURIComponent(JSON.stringify(this.data.recipe))
+  })
+}
 })

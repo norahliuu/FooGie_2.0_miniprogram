@@ -4,6 +4,7 @@ Page({
     recipeName: '',
     currentStep: 0,
     totalSteps: 0,
+    progressWidth: '0%',
     checked: false,
     checkedSteps: {},
     allDone: false
@@ -21,6 +22,8 @@ Page({
         steps: recipe.steps,
         recipeName: recipe.title,
         totalSteps: recipe.steps.length
+      }, () => {
+        this.updateProgress()
       })
     }
   },
@@ -40,6 +43,8 @@ Page({
       this.setData({
         currentStep: prevStep,
         checked: !!this.data.checkedSteps[prevStep]
+      }, () => {
+        this.updateProgress()
       })
     }
   },
@@ -50,6 +55,8 @@ Page({
       this.setData({
         currentStep: nextStep,
         checked: !!this.data.checkedSteps[nextStep]
+      }, () => {
+        this.updateProgress()
       })
     } else {
       this.setData({ allDone: true })
