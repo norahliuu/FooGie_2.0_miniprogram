@@ -1,17 +1,35 @@
 Page({
   data: {
     recipe: {},
-    recipeIndex: 0
+    recipeIndex: 0,
+    isCreate: false
   },
 
   onLoad(options) {
-    const index = options.index || 0
-    const history = wx.getStorageSync('recipeHistory') || []
-    if (history[index]) {
+    if (options.mode === 'create') {
       this.setData({
-        recipe: JSON.parse(JSON.stringify(history[index])),
-        recipeIndex: parseInt(index)
+        isCreate: true,
+        recipe: {
+          title: '',
+          source_platform: '手动创建',
+          source_url: '',
+          ingredients: [
+            { name: '', quantity: '' }
+          ],
+          steps: [
+            { step: 1, content: '' }
+          ]
+        }
       })
+    } else {
+      const index = options.index || 0
+      const history = wx.getStorageSync('recipeHistory') || []
+      if (history[index]) {
+        this.setData({
+          recipe: JSON.parse(JSON.stringify(history[index])),
+          recipeIndex: parseInt(index)
+        })
+      }
     }
   },
 
@@ -76,8 +94,19 @@ Page({
   },
 
   onSave() {
-    const history = wx.getStorageSync('recipeHistory') || []
-    history[this.data.recipeIndex] = this.data.recipe
+    if (!this.data.recipe.title.trim()) {
+      wx.showToast({ title: '请输入菜名', icon: 'none' })
+      return
+    }
+
+    let history = wx.getStorageSync('recipeHistory') || []
+
+    if (this.data.isCreate) {
+      history.unshift(this.data.recipe)
+    } else {
+      history[this.data.recipeIndex] = this.data.recipe
+    }
+
     wx.setStorageSync('recipeHistory', history)
     wx.showToast({ title: '已保存', icon: 'success' })
     setTimeout(() => {

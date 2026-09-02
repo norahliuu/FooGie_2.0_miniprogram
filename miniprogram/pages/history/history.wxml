@@ -1,4 +1,6 @@
 <view class="container">
+  <button class="create-btn" bindtap="onCreateRecipe">+ 手动创建菜谱</button>
+
   <view wx:if="{{historyList.length === 0}}" class="empty">
     <text class="empty-text">还没有解析过菜谱哦</text>
   </view>

@@ -18,6 +18,8 @@
   border-radius: 20rpx;
   padding: 30rpx;
   margin-bottom: 30rpx;
+  box-sizing: border-box;
+  width: 100%;
 }
 
 .section-title {
@@ -56,16 +58,21 @@
   justify-content: space-between;
   padding: 16rpx 0;
   border-bottom: 1rpx solid #f0f0f0;
+  width: 100%;
 }
 
 .ingredient-name {
   font-size: 28rpx;
   color: #333;
+  flex: 1;
 }
 
 .ingredient-qty {
   font-size: 28rpx;
   color: #f69d44;
+  flex-shrink: 0;
+  margin-left: 20rpx;
+  text-align: right;
 }
 
 .step-item {
