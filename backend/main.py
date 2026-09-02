@@ -22,7 +22,9 @@ def parse_recipe(request: ParseRequest):
 
         #step 1: 识别来源平台
         platform = identify_platform(clean_url)
-
+        platform_display = platform 
+        if video_data.get("author"):
+            platform_display = f"{platform}@{video_data['author']}"
         #step 2: 调用TikHUb获取音频url和文案
         video_data = fetch_video_data(clean_url, platform)
 
@@ -33,7 +35,7 @@ def parse_recipe(request: ParseRequest):
             "success": True,
             "data": {
                 "source_url": request.url,
-                "source_platform": platform,
+                "source_platform": platform_display,
                 **recipe
             }
         }

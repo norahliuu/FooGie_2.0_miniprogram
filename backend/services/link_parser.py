@@ -69,8 +69,12 @@ def fetch_video_data(url: str, platform: str) -> dict:
     # 提取视频文案
     caption = aweme.get("desc", "")
 
+    # 返回视频创作者名称
+    author = aweme.get("author", {}).get("nickname", "")    
+
     return {
         "audio_url": audio_url,
-        "caption": caption
+        "caption": caption,
+        "author": author
     }
 
