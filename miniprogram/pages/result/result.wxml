@@ -4,9 +4,14 @@
   <view class="section">
     <text class="section-title">食材清单</text>
     <view class="ingredient-list">
-      <view class="ingredient-item" wx:for="{{recipe.ingredients}}" wx:key="index">
-        <text class="ingredient-name">{{item.name}}</text>
-        <text class="ingredient-qty">{{item.quantity}}</text>
+      <view class="ingredient-item {{checkedIngredients[index] ? 'checked' : ''}}" wx:for="{{recipe.ingredients}}" wx:key="index" bindtap="onToggleIngredient" data-index="{{index}}">
+        <view class="ingredient-check">
+          <view class="check-box {{checkedIngredients[index] ? 'checked' : ''}}">
+            <text wx:if="{{checkedIngredients[index]}}">✓</text>
+          </view>
+        </view>
+        <text class="ingredient-name {{checkedIngredients[index] ? 'checked-text' : ''}}">{{item.name}}</text>
+        <text class="ingredient-qty {{checkedIngredients[index] ? 'checked-text' : ''}}">{{item.quantity}}</text>
       </view>
     </view>
   </view>

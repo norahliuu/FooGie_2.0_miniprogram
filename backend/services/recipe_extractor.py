@@ -36,7 +36,8 @@ def extract_recipe(audio_url: str, caption: str) -> dict:
             }
         ],
         modalities=["text"],
-        stream=True
+        stream=True,
+        max_tokens=4096
     )
 
     # 流式读取，拼接所有文本片段

@@ -60,7 +60,7 @@
 }
 
 .step-content {
-  font-size: 36rpx;
+  font-size: 70rpx;
   color: #333;
   line-height: 1.8;
   text-align: center;
@@ -103,7 +103,7 @@
 
 .nav-btn {
   flex: 1;
-  height: 88rpx;
+  height: 100rpx;
   border-radius: 44rpx;
   font-size: 32rpx;
   display: flex;

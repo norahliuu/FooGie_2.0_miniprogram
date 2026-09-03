@@ -11,6 +11,8 @@ Page({
     if (history[index]) {
       this.setData({ recipe: history[index], recipeIndex: index })
     }
+    const checked = wx.getStorageSync('checkedIngredients_' + index) || {}
+    this.setData({ checkedIngredients: checked })
   },
 
   onCopyLink() {
@@ -34,5 +36,14 @@ Page({
     wx.navigateTo({
       url: '/pages/edit/edit?index=' + this.data.recipeIndex
     })
-  }
+  },
+
+  onToggleIngredient(e) {
+    const index = e.currentTarget.dataset.index
+    const checked = this.data.checkedIngredients
+    checked[index] = !checked[index]
+    this.setData({ checkedIngredients: checked })
+    // 保存勾选状态到本地
+    wx.setStorageSync('checkedIngredients_' + this.data.recipeIndex, checked)
+  },
 })
