@@ -22,5 +22,11 @@ Page({
     wx.setStorageSync('recipeHistory', history)
     this.setData({ historyList: history })
     wx.showToast({ title: '已删除', icon: 'success' })
+  },
+
+  onCreateRecipe() {
+    wx.navigateTo({
+      url: '/pages/edit/edit?mode=create'
+    })
   }
 })

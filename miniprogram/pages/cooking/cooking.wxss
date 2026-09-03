@@ -99,16 +99,20 @@
 .nav-buttons {
   display: flex;
   gap: 20rpx;
+  width: 100%;
+  padding: 0 30rpx;
+  box-sizing: border-box;
 }
 
 .nav-btn {
   flex: 1;
-  height: 100rpx;
-  border-radius: 44rpx;
-  font-size: 32rpx;
+  height: 96rpx;
+  border-radius: 48rpx;
+  font-size: 34rpx;
   display: flex;
   align-items: center;
   justify-content: center;
+  white-space: nowrap;
 }
 
 .prev-btn {
