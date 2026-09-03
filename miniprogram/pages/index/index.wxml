@@ -1,14 +1,16 @@
 <view class="container">
   <view class="header">
-    <text class="title">Foo记</text>
+    <image class="logo" src="/assets/images/fooji-wordmark.png" mode="aspectFit" />
     <text class="subtitle">粘贴视频链接，一键提取食谱</text>
     <text class="subtitle">把收藏夹里的美食端上桌🥘</text>
   </view>
+  
+   <image class="hero-pot" src="/assets/images/home-hero-pot.png" mode="aspectFit" />
 
   <view class="input-section">
     <textarea 
       class="url-input" 
-      placeholder="粘贴抖音/小红书/B站的菜谱视频链接 *链接可通过分享->复制链接获得" 
+      placeholder="粘贴抖音/小红书/B站的菜谱视频链接" 
       value="{{inputUrl}}"
       bindinput="onInputChange"
       auto-height
@@ -19,7 +21,17 @@
     </button>
   </view>
 
-  <button class="history-btn" bindtap="goToHistory">我的菜谱本
-  </button>
+  <text class="subtitle">*链接可通过站内点击分享-复制链接获得</text>
+
+  <view class="divider">
+    <view class="divider-line"></view>
+    <image class="leaf-icon" src="/assets/images/leaf-sprig.png" mode="aspectFit" />
+    <view class="divider-line"></view>
+  </view>
+
+  <view class="history-entry" bindtap="goToHistory">
+    <image class="notebook-icon" src="/assets/images/recipe-notebook.png" mode="aspectFit" />
+    <text class="history-text">我的菜谱本</text>
+  </view>
   
 </view>
