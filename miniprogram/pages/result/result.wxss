@@ -40,7 +40,7 @@
 
 .source-text {
   font-size: 26rpx;
-  color: #f69d44;
+  color: #f9713c;
 }
 
 .copy-hint {
@@ -69,7 +69,7 @@
 
 .ingredient-qty {
   font-size: 28rpx;
-  color: #f69d44;
+  color: #f9713c;
   flex-shrink: 0;
   margin-left: 20rpx;
   text-align: right;
@@ -84,7 +84,7 @@
 .step-number {
   width: 48rpx;
   height: 48rpx;
-  background: #f69d44;
+  background: #f9713c;
   color: #fff;
   border-radius: 50%;
   display: flex;
@@ -106,7 +106,7 @@
 .cook-btn {
   width: 100%;
   height: 88rpx;
-  background: #f69d44;
+  background: #f9713c;
   color: #fff;
   font-size: 32rpx;
   border-radius: 44rpx;
@@ -119,11 +119,11 @@
 .edit-btn {
   width: 100%;
   height: 88rpx;
-  background: #fff;
-  color: #f69d44;
+  background: transparent;
+  color: #f9713c;
   font-size: 32rpx;
   border-radius: 44rpx;
-  border: 2rpx solid #f69d44;
+  border: 2rpx solid #f9713c;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -147,8 +147,8 @@
 }
 
 .check-box.checked {
-  background: #ff6b35;
-  border-color: #ff6b35;
+  background: #f9713c;
+  border-color: #f9713c;
 }
 
 .ingredient-item.checked {

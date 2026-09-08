@@ -27,8 +27,8 @@
 
 <view class="done-overlay" wx:if="{{allDone}}">
   <view class="done-card">
-    <text class="done-emoji">🎉</text>
-    <text class="done-title">恭喜完成！</text>
+    <image class="happy-pot" src="/assets/images/happy_pot.png" mode="aspectFit" />
+    <text class="done-title">恭喜完成  🎉</text>
     <text class="done-subtitle">{{recipeName}} 做好啦</text>
     <button class="done-btn" bindtap="onBackHome">返回首页</button>
   </view>

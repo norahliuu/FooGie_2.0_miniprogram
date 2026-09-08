@@ -27,7 +27,7 @@
 
 .progress-fill {
   height: 100%;
-  background: #ff6b35;
+  background: #f69d44;
   border-radius: 4rpx;
   transition: width 0.3s;
 }
@@ -48,7 +48,7 @@
 .step-badge {
   width: 80rpx;
   height: 80rpx;
-  background: #ff6b35;
+  background: #f69d44;
   color: #fff;
   border-radius: 50%;
   display: flex;
@@ -87,8 +87,8 @@
 }
 
 .checkbox.checked {
-  background: #ff6b35;
-  border-color: #ff6b35;
+  background: #f69d44;
+  border-color: #f69d44;
 }
 
 .check-text {
@@ -128,7 +128,7 @@
 }
 
 .next-btn {
-  background: #ff6b35;
+  background: #f69d44;
   color: #fff;
 }
 
@@ -176,11 +176,17 @@
 .done-btn {
   width: 100%;
   height: 88rpx;
-  background: #ff6b35;
+  background: #f69d44;
   color: #fff;
   font-size: 32rpx;
   border-radius: 44rpx;
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.happy-pot {
+  width: 300rpx;
+  height: 400rpx;
+  margin: 30rpx 0;
 }

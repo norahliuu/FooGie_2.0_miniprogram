@@ -55,7 +55,7 @@ page {
 .parse-btn {
   width: 100%;
   height: 96rpx;
-  background: #e85d2c;
+  background: #f9713c;
   color: #fff;
   font-size: 34rpx;
   font-weight: bold;
@@ -94,8 +94,8 @@ page {
 }
 
 .notebook-icon {
-  width: 60rpx;
-  height: 60rpx;
+  width: 100rpx;
+  height: 100rpx;
 }
 
 .history-text {
